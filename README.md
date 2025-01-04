@@ -1,44 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project README</title>
-</head>
-<body>
+# ROSPlan based Robotic Planning System and Localization 
 
-<h1>Project Name: ROSPlan-based Robotic Planning System</h1>
 
-<p><strong>Author:</strong> Vahid Bagherian</p>
-<p><strong>Course:</strong> Master's in Robotic Engineering</p>
-<p><strong>Description:</strong> This project integrates ROSPlan-based planning for a robot to navigate waypoints, detect markers, and return to previous locations based on PDDL (Planning Domain Definition Language) actions. The system uses a custom action interface to control the robot's behavior based on planning results.</p>
+<p><strong>Description:</strong> This project integrates ROSPlan-based planning for a mobile robot  mobile robot endowed with a camera and a laser scanner in a Gazebo environment with 4 different waypoints. In each waypoint there exists one aruco marcer. The robot's goal is to navigate through the 4 different waypoints, detect the markers id in each waypoint, and then move to the next waypoint and repeat the task until all markers are found based on PDDL (Planning Domain Definition Language) actions. Finally the robot should go to the location which holds the marker with least id. The system uses a custom action interface to control the robot's behavior based on planning results. During its task, the robot needs to avoid obstacles such as walls and also the aruco markers when trying to go to a new location. Consequently, our system will utilize gmapping as the Simultaneous Localization and Mapping (SLAM) algorithm to map and determine the robot's position within the environment. Furthermore, the Move_base package will be employed for enabling autonomous navigation capabilities. </p>
 
-<hr>
+---
+## Table of Contents
 
-<h2>Table of Contents</h2>
-<ul>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#actions">Actions</a></li>
-    <li><a href="#contribution">Contribution</a></li>
-    <li><a href="#license">License</a></li>
-</ul>
+1. [Overview](#overview)  
+2. [Dependencies](#dependencies)
+3. [installation](#Installation)
+4. [usage](#Usage)  
+5. [actions](#actions)  
+6. [Code Overview](#code-overview)  
+7. [Author](#author)  
 
-<hr>
+---
 
-<h2 id="overview">Overview</h2>
-<p>This project involves using ROSPlan for planning, which integrates domain and problem definitions in PDDL to perform automated actions for a robot. The robot can navigate to specific waypoints, detect markers, and return to the last location where a marker was found.</p>
+## Overview
+This project involves using ROSPlan for planning, which integrates domain and problem definitions in PDDL to perform automated actions for a robot. The robot can navigate to specific waypoints, detect markers, and return to the location where the marker with the least id was found.
 
-<h3>Key Features</h3>
-<ul>
-    <li><strong>Waypoint Navigation:</strong> Robot moves to predefined waypoints using ROSMoveBase.</li>
-    <li><strong>Marker Detection:</strong> The robot searches for markers, updates the location with the lowest marker ID, and navigates accordingly.</li>
-    <li><strong>ROSPlan Integration:</strong> Uses ROSPlan to create plans based on PDDL and dispatch actions for robot execution.</li>
-</ul>
+### Key Features
 
-<hr>
+**Waypoint Navigation:** Robot moves to predefined waypoints using MoveBase. We were provided with certain clues regarding the marker's position:
+- WP0 is located at: x = -7.0, y = 1.5
+- WP 1 is located at: x = -3.0, y = -8.0
+- WP 2 is located at: x = 6.0, y = 2.0
+- WP 3 is located at: x = 7.0, y = -5.0
+- WP4 which is the robot's initial position is: x = 0, y = 2.75
+  
+**Marker Detection:** The robot searches for markers, updates the location with the lowest marker ID, and navigates accordingly.
 
+**ROSPlan Integration:** Uses ROSPlan to create plans based on PDDL and dispatch actions for robot execution.
+
+---
+
+## Dependencies
+Make sure the following packages are installed:
+
+```bash
+cd ~/<ros_workspace>/src
+git clone https://github.com/CarmineD8/aruco_ros.git
+```
+After Installing the aruco ros package make sure to substitute the marker_publish.cpp file in the src folder of the aruco_ros package with the marker_publish.cpp file in this repository. This is because the default code is changed partially for the goals of this project.
+
+```bash
+git clone https://github.com/CarmineD8/SLAM_packages.git # Remember to switch to noetic branch
+git clone https://github.com/KCL-Planning/ROSPlan.git
+```
 <h2 id="installation">Installation</h2>
 <p>To get started with this project, follow the steps below to set up your development environment:</p>
 
@@ -114,3 +122,4 @@ Please ensure that your code follows the standard ROS C++ coding style. You can 
 
 </body>
 </html>
+
