@@ -6,13 +6,11 @@
 ---
 ## Table of Contents
 
-1. [Overview](#overview)  
-2. [Dependencies](#dependencies)
-3. [installation](#Installation)
-4. [usage](#Usage)  
-5. [actions](#actions)  
-6. [Code Overview](#code-overview)  
-7. [Author](#author)  
+1. [Overview](#overview)
+2. [Usage](#usage)
+3. [actions](#actions)
+4. [Code Overview](#code-overview)
+5. [Author](#author)  
 
 ---
 
@@ -34,7 +32,7 @@ This project involves using ROSPlan for planning, which integrates domain and pr
 
 ---
 
-## Dependencies
+## Usage
 Make sure the following packages are installed:
 
 ```bash
@@ -47,6 +45,9 @@ After Installing the aruco ros package make sure to substitute the marker_publis
 git clone https://github.com/CarmineD8/SLAM_packages.git # Remember to switch to noetic branch
 git clone https://github.com/KCL-Planning/ROSPlan.git
 ```
+
+For ROSPlan follow the instruction in their readme to properly install the dependencies.
+
 <h2 id="installation">Installation</h2>
 <p>To get started with this project, follow the steps below to set up your development environment:</p>
 
