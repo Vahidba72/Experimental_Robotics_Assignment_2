@@ -3,12 +3,14 @@
 
 <p><strong>Description:</strong> This project integrates ROSPlan-based planning for a mobile robot  mobile robot endowed with a camera and a laser scanner in a Gazebo environment with 4 different waypoints. In each waypoint there exists one aruco marcer. The robot's goal is to navigate through the 4 different waypoints, detect the markers id in each waypoint, and then move to the next waypoint and repeat the task until all markers are found based on PDDL (Planning Domain Definition Language) actions. Finally the robot should go to the location which holds the marker with least id. The system uses a custom action interface to control the robot's behavior based on planning results. During its task, the robot needs to avoid obstacles such as walls and also the aruco markers when trying to go to a new location. Consequently, our system will utilize gmapping as the Simultaneous Localization and Mapping (SLAM) algorithm to map and determine the robot's position within the environment. Furthermore, the Move_base package will be employed for enabling autonomous navigation capabilities. </p>
 
-Here you can see a demo of the implemented code:
+In the next three videos you can see one cycle of the search, detect task of the robot and finally the robot moves to the location with the least id:
 
 https://github.com/user-attachments/assets/5a92f244-861f-4575-a446-2455d0f00b97
 
 
 https://github.com/user-attachments/assets/38bdc573-6d51-4bcf-8583-7f7206a65f5d
+
+https://github.com/user-attachments/assets/0922d696-82e5-4065-a319-bddd7e4e440c
 
 
 ---
@@ -18,7 +20,7 @@ https://github.com/user-attachments/assets/38bdc573-6d51-4bcf-8583-7f7206a65f5d
 2. [Usage](#usage)
 3. [actions](#actions)
 4. [Package Descriptions](#package-descriptions)
-5. [Author](#author)  
+ 
 
 ---
 
