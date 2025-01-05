@@ -7,7 +7,7 @@ Here you can see a demo of the implemented code:
 
 (https://github.com/user-attachments/assets/5a92f244-861f-4575-a446-2455d0f00b97)
 
-https://github.com/user-attachments/assets/38bdc573-6d51-4bcf-8583-7f7206a65f5d
+
 ---
 ## Table of Contents
 
